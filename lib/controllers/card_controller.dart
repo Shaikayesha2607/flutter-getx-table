@@ -7,6 +7,7 @@ class CardController extends GetxController{
 
   void onInit(){
     super.onInit();
+    print('ininit method');
     loadUsers();
   }
 

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mysecondpr/controllers/card_controller.dart';
-import 'package:mysecondpr/views/table_screen.dart';
+// import 'package:mysecondpr/views/table_screen.dart';
 
 class CardScreen extends StatelessWidget {
    CardScreen({super.key});
 
-    final CardController controller = Get.put(CardController());
+    // final CardController controller = Get.put(CardController());
+   final CardController controller = Get.find<CardController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,15 +16,16 @@ class CardScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: GetBuilder<CardController>(
-          builder:(controller){
+          builder:(_){
             return ListView.builder(
                 itemCount: controller.users.length,
                 itemBuilder: (context,index){
+                  final user = controller.users[index];
                   return Card(
                     margin: EdgeInsets.all(16),
                     child: ListTile(
-                      title:Text('name: ${controller.users[index].name}'),
-                      subtitle: Text('age: ${controller.users[index].age}'),
+                      title:Text('name: ${user.name}'),
+                      subtitle: Text('age: ${user.age}'),
                       onTap: (){
                         controller.showPopup();
                       },
@@ -35,7 +37,8 @@ class CardScreen extends StatelessWidget {
 
       ),
       floatingActionButton: FloatingActionButton(onPressed: (){
-        Get.to(()=> TableScreen());
+        // Get.to(()=> TableScreen());
+          Get.toNamed("/table");
       },
       backgroundColor: Colors.blue,
         child:Icon(Icons.table_chart),

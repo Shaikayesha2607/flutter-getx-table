@@ -6,7 +6,8 @@ class TableScreen extends StatelessWidget {
   TableScreen({super.key});
 
   // Inject controller (dependency)
-  final TableController controller = Get.put(TableController());
+  // final TableController controller = Get.put(TableController());
+  final TableController controller = Get.find<TableController>();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class TableScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: GetBuilder<TableController>(
-          builder: (controller) {
+          builder: (_) {
             return DataTable(
               columns: const [
                 DataColumn(label: Text('ID')),
