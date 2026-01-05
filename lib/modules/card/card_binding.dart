@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mysecondpr/controllers/card_controller.dart';
+import 'package:mysecondpr/modules/card/card_controller.dart';
 
 class CardBinding extends Bindings{
   @override

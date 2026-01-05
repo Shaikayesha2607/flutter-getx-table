@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/table_controller.dart';
+import 'table_controller.dart';
 
 class TableScreen extends StatelessWidget {
   TableScreen({super.key});
@@ -12,7 +12,12 @@ class TableScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Items Table')),
+      appBar: AppBar(
+          title: const Text('Items Table'),
+          leading: IconButton(onPressed: (){
+            Get.back();
+    }, icon: Icon(Icons.arrow_back)),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: GetBuilder<TableController>(

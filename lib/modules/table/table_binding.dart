@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mysecondpr/controllers/table_controller.dart';
+import 'package:mysecondpr/modules/table/table_controller.dart';
 
 class TableBinding extends Bindings{
   @override

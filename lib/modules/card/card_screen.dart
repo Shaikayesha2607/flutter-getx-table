@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mysecondpr/controllers/card_controller.dart';
+import 'package:mysecondpr/modules/card/card_controller.dart';
 // import 'package:mysecondpr/views/table_screen.dart';
 
 class CardScreen extends StatelessWidget {
@@ -38,7 +38,7 @@ class CardScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(onPressed: (){
         // Get.to(()=> TableScreen());
-          Get.toNamed("/table");
+          Get.toNamed("/login");
       },
       backgroundColor: Colors.blue,
         child:Icon(Icons.table_chart),
