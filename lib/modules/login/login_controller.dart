@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../routes/app_routes.dart';
 
 class LoginController extends GetxController{
   //form key
@@ -12,7 +13,7 @@ class LoginController extends GetxController{
     if(formKey.currentState!.validate()){
       Get.snackbar("Success", "form validated",
       snackPosition: SnackPosition.BOTTOM);
-      Get.toNamed('/table');
+      Get.toNamed(Routes.table);
     }
   }
   @override

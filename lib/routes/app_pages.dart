@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'app_routes.dart';
 import 'package:mysecondpr/modules/card/card_binding.dart';
 import 'package:mysecondpr/modules/login/login_binding.dart';
 import 'package:mysecondpr/modules/login/login_screen.dart';
@@ -9,17 +10,17 @@ import 'package:mysecondpr/modules/table/table_screen.dart';
 class AppPages {
   static final routes =[
     GetPage(
-      name:'/card',
+      name:Routes.card,
       page:() => CardScreen(),
       binding:CardBinding(),
     ),
     GetPage(
-        name: '/login',
+        name: Routes.login,
         page: () => LoginScreen(),
         binding: LoginBinding()
     ),
     GetPage(
-        name: '/table',
+        name: Routes.table,
         page: () => TableScreen(),
         binding: TableBinding()
     ),

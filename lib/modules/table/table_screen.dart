@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'table_controller.dart';
 
 class TableScreen extends StatelessWidget {
@@ -11,6 +12,8 @@ class TableScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final bp = ResponsiveBreakpoints.of(context);
+    // print('Current Device:${bp.breakpoint.name}');
     return Scaffold(
       appBar: AppBar(
           title: const Text('Items Table'),
