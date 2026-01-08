@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mysecondpr/modules/card/card_controller.dart';
+import 'package:mysecondpr/widgets/title.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:mysecondpr/modules/card/widgets/header.dart';
 import 'package:mysecondpr/modules/card/widgets/mobilelist.dart';
 import 'package:mysecondpr/modules/card/widgets/tablet_dekstop.dart';
 import '../../routes/app_routes.dart';
 
-
-// import 'package:mysecondpr/views/table_screen.dart';
-
 class CardScreen extends GetView<CardController> {
    CardScreen({super.key});
-
 
   @override
   Widget build(BuildContext context) {
     final bp = ResponsiveBreakpoints.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('List of Users'),
+        title: ResponsiveTitle(text: 'List of Users'),
         centerTitle: true,
       ),
       body: GetBuilder<CardController>(

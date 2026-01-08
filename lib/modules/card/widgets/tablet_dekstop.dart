@@ -18,6 +18,7 @@ class TabletDesktopGrid extends GetView<CardController> {
           mainAxisSpacing: 16,
           crossAxisSpacing: 16,
           childAspectRatio: 3,),
+      physics: const AlwaysScrollableScrollPhysics(),
       itemBuilder: (_,index){
         return UserCardTile(user: controller.users[index]);
       },

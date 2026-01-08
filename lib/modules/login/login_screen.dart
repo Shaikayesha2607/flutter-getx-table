@@ -1,63 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mysecondpr/modules/login/widgets/auth_card.dart';
+import 'package:mysecondpr/modules/login/widgets/login_form.dart';
+import 'package:mysecondpr/modules/login/widgets/responsive_auth_layout.dart';
+import 'package:mysecondpr/widgets/title.dart';
 import 'login_controller.dart';
 
-class LoginScreen extends GetView<LoginController>{
+class LoginScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: ResponsiveTitle(text:'Login'),
         centerTitle: true,
       ),
-      body:Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Form(
-          key: controller.formKey,
-          child: Column(
-            children: [
-              //email
-              TextFormField(
-                controller: controller.emailcontroller,
-                decoration:InputDecoration(labelText: 'Email'),
-                validator: (value){
-                  if( value == null || value.isEmpty){
-                    return "Email is required";
-                  }
-                  if(!GetUtils.isEmail(value)){
-                    return " Invalid email";
-                  }
-                  return null;
-                },
-              ),
-
-              SizedBox(height: 60,),
-
-              TextFormField(
-                controller: controller.passwordcontroller,
-                decoration: InputDecoration(labelText: "Password"),
-                obscureText: true,
-                validator: (value){
-                  if(value == null || value.isEmpty){
-                    return "password is required";
-                  }
-                  if(value.length < 6){
-                    return "Minimum 6 characters";
-                  }
-                  return null;
-                },
-              ),
-
-              SizedBox(height: 20,),
-
-              ElevatedButton(onPressed: (){
-                controller.submit();
-              }, child: Text('LOGIN'))
-            ],
-          ),
-        ),
-      ) ,
-    );
-
+      body:ResponsiveAuthLayout(
+          child: AuthCard(
+              child: LoginForm()))
+      // body:AuthCard(child: LoginForm() ));
+      );
   }
 }

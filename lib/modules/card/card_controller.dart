@@ -12,9 +12,17 @@ class CardController extends GetxController{
   }
 
   void loadUsers(){
-    users = [Users(name: 'Ayesha', age: '23'),
+    users = [Users(name: 'Ayeshu', age: '23'),
             Users(name: 'Rahmat', age: '24'),
-            Users(name: 'Asmaa', age: '23')];
+            Users(name: 'Asmaa', age: '23'),
+            Users(name: 'AKKi', age: '27'),
+            Users(name: 'Subha', age: '21'),
+            Users(name: 'Nandu', age: '23'),
+            Users(name: 'Chendu', age: '23'),
+            Users(name: 'Mouni', age: '23'),
+            Users(name: 'Rohi', age: '23'),
+            Users(name: 'Niru', age: '23'),
+            Users(name: 'Dolly', age: '23')];
 
     update();
   }

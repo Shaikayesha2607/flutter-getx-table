@@ -1,49 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mysecondpr/modules/table/widgets/course_table.dart';
+import 'package:mysecondpr/widgets/title.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'table_controller.dart';
+
 
 class TableScreen extends StatelessWidget {
   TableScreen({super.key});
 
-  // Inject controller (dependency)
-  // final TableController controller = Get.put(TableController());
-  final TableController controller = Get.find<TableController>();
-
   @override
   Widget build(BuildContext context) {
-    // final bp = ResponsiveBreakpoints.of(context);
-    // print('Current Device:${bp.breakpoint.name}');
+    final bp = ResponsiveBreakpoints.of(context);
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Items Table'),
+          title:  ResponsiveTitle(text:'Course Enrollments'),
           leading: IconButton(onPressed: (){
             Get.back();
     }, icon: Icon(Icons.arrow_back)),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12),
-        child: GetBuilder<TableController>(
-          builder: (_) {
-            return DataTable(
-              columns: const [
-                DataColumn(label: Text('ID')),
-                DataColumn(label: Text('Name')),
-              ],
-              rows: controller.items
-                  .map(
-                    (item) => DataRow(
-                  cells: [
-                    DataCell(Text(item['id']!)),
-                    DataCell(Text(item['Name']!)),
-                  ],
-                ),
-              )
-                  .toList(),
-            );
-          },
+      body: Center(
+        child: ConstrainedBox(
+            constraints: BoxConstraints(
+                maxWidth: bp.isDesktop ? 1100 : double.infinity
+            ),
+            child: const CourseTable(),
         ),
-      ),
+      )
+
     );
   }
 }
